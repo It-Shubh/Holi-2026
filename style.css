@@ -1,62 +1,275 @@
-/* General */
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{
+/* =============================== */
+/*      HOLI 2026 RESPONSIVE CSS   */
+/* =============================== */
+
+/* Reset & Body */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+body {
   background:linear-gradient(135deg,#FF5DA2,#FFD93D,#6BCB77,#845EC2,#FF9671);
   background-size:400% 400%;
   animation:gradientBG 15s ease infinite;
-  overflow-x:hidden;color:#fff;
+  color:#fff;
+  overflow-x:hidden;
 }
 
-/* Sparkle Background Canvas */
-#sparkleCanvas{
-  position:fixed;top:0;left:0;width:100%;height:100%;
-  z-index:0;pointer-events:none;
+/* Background Animations */
+#sparkleCanvas {
+  position:fixed; top:0; left:0; width:100%; height:100%;
+  pointer-events:none; z-index:0;
 }
 
-/* Nav */
-.top-nav{position:fixed;top:20px;right:30px;display:flex;gap:15px;z-index:9999;}
-.top-nav button{padding:10px 20px;border:none;border-radius:25px;background:#FF5DA2;color:#fff;font-weight:bold;cursor:pointer;transition:0.3s;}
-.top-nav button:hover{background:#FFD93D;color:#000;}
+/* Navigation */
+.top-nav {
+  position:fixed;
+  top:15px;
+  right:10px;
+  display:flex;
+  gap:10px;
+  z-index:1000;
+  flex-wrap:wrap;
+}
+.top-nav button {
+  padding:8px 16px;
+  border:none;
+  border-radius:20px;
+  background:#FF5DA2;
+  color:#fff;
+  font-weight:600;
+  font-size:0.9rem;
+  cursor:pointer;
+  transition:0.3s;
+}
+.top-nav button:hover {
+  background:#FFD93D;
+  color:#000;
+}
 
-/* Hero */
-.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;z-index:1;}
-.neon-text{font-family:'Pacifico',cursive;font-size:4rem;text-shadow:0 0 10px #FFD93D,0 0 20px #FF5DA2,0 0 40px #6BCB77;}
-.subtext{font-family:'Baloo Bhai 2',cursive;font-size:1.8rem;margin-top:1rem;}
+/* Hero Section */
+.hero {
+  min-height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  z-index:1;
+  padding:20px;
+}
+.neon-text {
+  font-family:'Pacifico',cursive;
+  font-size:clamp(2rem,8vw,4rem);
+  line-height:1.2;
+  text-shadow:0 0 5px #fff,0 0 15px #FFD93D,0 0 30px #FF5DA2;
+}
+.subtext {
+  font-family:'Baloo Bhai 2',cursive;
+  font-size:clamp(1rem,4vw,1.8rem);
+  margin-top:1rem;
+}
 
-/* Holika */
-#holikaLeft,#holikaRight{position:fixed;bottom:0;width:150px;height:150px;z-index:1;}
-#holikaLeft{left:0;}#holikaRight{right:0;}
+/* Holika Fires */
+#holikaLeft,#holikaRight {
+  position:fixed;
+  bottom:0;
+  width:clamp(70px,18vw,150px);
+  height:auto;
+  z-index:1;
+}
+#holikaLeft { left:0; }
+#holikaRight { right:0; }
 
-/* Play Section */
-.play-holi{padding:50px 20px;background:#1a1a1a;text-align:center;z-index:1;position:relative;}
-.play-holi h2{font-family:'Baloo Bhai 2',cursive;font-size:3rem;margin-bottom:20px;}
-.image-container{position:relative;width:300px;height:400px;margin:auto;overflow:hidden;border-radius:10px;background:radial-gradient(circle,rgba(0,255,255,0.1),transparent 70%);box-shadow:0 0 30px #00ffff,0 0 60px #00ffff inset;animation:flame 3s ease-in-out infinite alternate;}
-@keyframes flame{0%{box-shadow:0 0 20px #00ffff,0 0 40px #00ffff inset;}50%{box-shadow:0 0 40px #00ffff,0 0 80px #00ffff inset;}100%{box-shadow:0 0 20px #00ffff,0 0 40px #00ffff inset;}}
-#mePic{width:100%;height:100%;object-fit:cover;border-radius:10px;position:absolute;top:0;left:0;z-index:1;}
-#holiCanvas{position:absolute;top:0;left:0;z-index:2;mix-blend-mode:multiply;opacity:0.7;}
-.colors{display:flex;gap:15px;margin-top:20px;justify-content:center;}
-.color-btn{width:40px;height:40px;border-radius:50%;border:none;cursor:pointer;transition:0.2s;}
-.color-btn:hover{transform:scale(1.2);}
-#resetColors{margin-top:20px;padding:10px 20px;border:none;border-radius:25px;background:#FF5DA2;color:#fff;font-weight:bold;cursor:pointer;transition:0.3s;}
-#resetColors:hover{background:#FFD93D;color:#000;}
-#openVideo{margin-top:30px;padding:12px 24px;border:none;border-radius:30px;background:#6BCB77;color:#fff;font-weight:bold;cursor:pointer;transition:0.3s;}
-#openVideo:hover{background:#FFD93D;color:#000;}
+/* Play With Me Section */
+.play-holi {
+  padding:60px 10px;
+  background:#1a1a1a;
+  text-align:center;
+}
+.play-holi h2 {
+  font-family:'Baloo Bhai 2',cursive;
+  font-size:clamp(1.5rem,6vw,3rem);
+  margin-bottom:20px;
+}
 
-/* Wish Section */
-.wish-holi{padding:50px 20px;background:#222;text-align:center;}
-.wish-holi form{display:flex;flex-direction:column;gap:15px;max-width:400px;margin:auto;}
-.wish-holi input,.wish-holi textarea{padding:10px;border-radius:5px;border:none;}
-.file-label{font-size:0.9rem;color:#FFD93D;}
-.wish-holi button{padding:10px;border:none;border-radius:5px;background:#FF5DA2;color:#fff;font-weight:bold;cursor:pointer;transition:0.3s;}
-.wish-holi button:hover{background:#FFD93D;color:#000;}
-.socials{margin-top:20px;display:flex;justify-content:center;gap:20px;}
-.socials a{color:#FFD93D;text-decoration:none;font-weight:bold;transition:0.3s;}
-.socials a:hover{color:#FF5DA2;}
+/* Image Container */
+.image-container {
+  position:relative;
+  width:clamp(220px,70vw,320px);
+  height:clamp(280px,85vw,420px);
+  margin:auto;
+  overflow:hidden;
+  border-radius:12px;
+  background:radial-gradient(circle,rgba(0,255,255,0.1),transparent 70%);
+  box-shadow:0 0 25px #00ffff,0 0 45px #00ffff inset;
+  animation:flame 3s ease-in-out infinite alternate;
+}
+@keyframes flame {
+  0%{box-shadow:0 0 20px #00ffff,0 0 40px #00ffff inset;}
+  50%{box-shadow:0 0 40px #00ffff,0 0 80px #00ffff inset;}
+  100%{box-shadow:0 0 20px #00ffff,0 0 40px #00ffff inset;}
+}
 
-/* Video page back button */
-.video-page #backFromVideo{position:fixed;top:20px;left:30px;padding:10px 20px;border:none;border-radius:25px;background:#00ffff;color:#000;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #00ffff,0 0 20px #00ffff;transition:0.3s;z-index:999;}
-.video-page #backFromVideo:hover{background:#fff;color:#00ffff;}
+#mePic {
+  width:100%; height:100%;
+  object-fit:cover;
+  border-radius:10px;
+  position:absolute;
+  top:0; left:0;
+  z-index:1;
+}
+#holiCanvas {
+  position:absolute;
+  top:0; left:0;
+  z-index:2;
+  mix-blend-mode:multiply;
+  opacity:0.7;
+}
+
+/* Color Buttons */
+.colors {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+  justify-content:center;
+}
+.color-btn {
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+  transition:transform 0.2s;
+}
+.color-btn:hover { transform:scale(1.2); }
+
+/* Buttons */
+#resetColors,#openVideo {
+  margin-top:20px;
+  padding:10px 20px;
+  border:none;
+  border-radius:25px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+  font-size:1rem;
+}
+#resetColors {
+  background:#FF5DA2; color:#fff;
+}
+#resetColors:hover {
+  background:#FFD93D; color:#000;
+}
+#openVideo {
+  background:#6BCB77; color:#fff;
+}
+#openVideo:hover {
+  background:#FFD93D; color:#000;
+}
+
+/* Wish Me Back */
+.wish-holi {
+  padding:60px 20px;
+  background:#222;
+  text-align:center;
+}
+.wish-holi h2 {
+  font-family:'Baloo Bhai 2',cursive;
+  font-size:clamp(1.5rem,6vw,2.5rem);
+  margin-bottom:15px;
+}
+.wish-holi form {
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  max-width:400px;
+  margin:auto;
+}
+.wish-holi input,.wish-holi textarea {
+  padding:12px;
+  border:none;
+  border-radius:5px;
+  font-size:1rem;
+}
+.file-label {
+  color:#FFD93D;
+  font-size:0.9rem;
+}
+.wish-holi button {
+  padding:12px;
+  border:none;
+  border-radius:5px;
+  background:#FF5DA2;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+.wish-holi button:hover {
+  background:#FFD93D;
+  color:#000;
+}
+.socials {
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+.socials a {
+  color:#FFD93D;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+.socials a:hover { color:#FF5DA2; }
+
+/* Video Page */
+.video-page #backFromVideo {
+  position:fixed;
+  top:20px;
+  left:20px;
+  padding:10px 18px;
+  border:none;
+  border-radius:25px;
+  background:#00ffff;
+  color:#000;
+  font-weight:bold;
+  box-shadow:0 0 10px #00ffff;
+  cursor:pointer;
+  z-index:1000;
+  transition:0.3s;
+}
+.video-page #backFromVideo:hover {
+  background:#fff;
+  color:#00ffff;
+}
 
 /* Canvases */
-#gulalCanvas,#confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;}
-@keyframes gradientBG{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+#gulalCanvas,#confettiCanvas {
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  pointer-events:none;
+  z-index:9999;
+}
+
+/* Media Queries */
+@media(max-width:768px){
+  .top-nav { justify-content:center; top:10px; right:0; left:0; }
+  .hero { min-height:80vh; padding-top:60px; }
+  .play-holi, .wish-holi { padding:40px 10px; }
+  #openVideo,#resetColors { width:80%; max-width:280px; }
+}
+@media(max-width:480px){
+  .top-nav button { font-size:0.8rem; padding:6px 14px; }
+  .color-btn { width:32px; height:32px; }
+  #mePic { border-radius:8px; }
+  .neon-text { font-size:2rem; }
+  .subtext { font-size:1rem; }
+}
+@keyframes gradientBG {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
