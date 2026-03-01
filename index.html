@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rangon ka Utsav</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sparkle Background -->
+  <canvas id="sparkleCanvas"></canvas>
+
+  <!-- Navigation -->
+  <div class="top-nav">
+    <button id="homeBtn">Home</button>
+    <button id="playBtn">Play With Me</button>
+    <button id="wishBtn">Wish Me Back</button>
+  </div>
+
+  <!-- Home Section -->
+  <section id="home" class="hero">
+    <h1 class="neon-text">Rangon ka Utsav!</h1>
+    <p class="subtext">Splash the Colors of Happiness 💜💛💚</p>
+    <img id="holikaLeft" src="images/holika.png" alt="Holika left">
+    <img  id="holikaRight" src="images/holika.png" alt="Holika right">
+  </section>
+
+  <!-- Play With Me Section -->
+  <section id="play" class="play-holi">
+    <h2>Play With Me!</h2>
+    <div class="image-container">
+      <canvas id="holiCanvas"></canvas>
+      <img src="images/me.jpeg" alt="Me" id="mePic">
+    </div>
+    <div class="colors">
+      <button class="color-btn" data-color="#FF5DA2" style="background:#FF5DA2"></button>
+      <button class="color-btn" data-color="#FFD93D" style="background:#FFD93D"></button>
+      <button class="color-btn" data-color="#6BCB77" style="background:#6BCB77"></button>
+      <button class="color-btn" data-color="#845EC2" style="background:#845EC2"></button>
+      <button class="color-btn" data-color="#FF9671" style="background:#FF9671"></button>
+    </div>
+    <button id="resetColors">Reset Colors</button>
+
+    <!-- Video button -->
+    <button id="openVideo">🎥 Watch Holi Video</button>
+  </section>
+
+  <!-- Wish Me Back Section -->
+  <section id="wish" class="wish-holi">
+    <h2>Wish Me Back!</h2>
+    <form id="wishForm" action="https://formspree.io/f/xbdaezeq" method="POST" enctype="multipart/form-data">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <label for="attachment" class="file-label">Attach Image/Video for your wish (optional)</label>
+      <input type="file" name="attachment" id="attachment" accept="image/*,video/*">
+      <button type="submit">Send Wish</button>
+    </form>
+    <div class="socials">
+      <a href="https://www.instagram.com/shubhstripathi?igsh=MWFzNDJ3dHdocm83cQ==" target="_blank">Instagram</a>
+      <a href="https://wa.me/9517459247" target="_blank">WhatsApp</a>
+      <a href="https://it-shubh.github.io/portfolioo/" target="_blank">Portfolio</a>
+    </div>
+  </section>
+
+  <!-- Canvases -->
+  <canvas id="gulalCanvas"></canvas>
+  <canvas id="confettiCanvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
